@@ -1,0 +1,72 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class=" container-fluid ">
+            <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#navbarTogglerDemo01 " aria-controls="navbarTogglerDemo01 " aria-expanded="false " aria-label="Toggle navigation ">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="" width="100" height="50">
+            </a>
+
+
+            <form class="d-flex">
+                <button class="btn btn-outline-success" type="submit">INICIAR SESION</button>
+            </form>
+        </div>
+    </nav>
+    <div class="content ">
+
+
+
+        <div class="form-floating mb-3 ">
+            <label for="floatingInput ">Nombre</label>
+            <input type="email " class="form-control " id="floatingInput " placeholder="Nombre Completo ">
+        </div>
+
+
+        <div class="form-floating mb-3 ">
+            <label for="floatingInput ">Correo Electronico</label>
+            <input type="email " class="form-control " id="floatingInput " placeholder="name@example.com " [(ngModel)]="correoElectronico" (ngModelChange)="validarCorreo()">
+            <div *ngIf="correoElectronico">
+                <label for="basic-url " class="form-label " style="font-size: 12px;" [ngClass]="{rojo: !bool, verde: bool}">{{correoValidacion}}</label>
+
+            </div>
+
+        </div>
+
+        <label for="basic-url " class="form-label ">Domicilio</label>
+
+
+        <div class="input-group mb-3 ">
+            <input type="text " class="form-control " placeholder="Estado " aria-label="Estado ">
+            <input type="text " class="form-control " placeholder="Ciudad " aria-label="Ciudad ">
+            <input type="text " class="form-control " placeholder="Telefono " aria-label="Telefono ">
+
+        </div>
+        <label for="basic-url " class="form-label ">Contraseña</label>
+
+
+        <div class="input-group mb-3 ">
+            <input type="password " class="form-control " placeholder="Ingresa tu contraseña " aria-label="Ingresa tu contraseña ">
+            <input type="password " class="form-control " placeholder="Confirma tu contraseña " aria-label="Confirma tu contraseña ">
+
+        </div>
+
+
+
+        <div style="margin-top: 20px; ">
+            <re-captcha (resolved)="resolved($event) " [siteKey]="sitekey "></re-captcha>
+
+        </div>
+
+
+        <button type="submit " class="btn btn-primary " style="float: right; ">ENVIAR</button>
+
+    </div>
+
+</ion-content>
