@@ -25,7 +25,7 @@
 
         <div class="form-floating mb-3 ">
             <label for="floatingInput ">Nombre</label>
-            <input type="email " class="form-control " id="floatingInput " placeholder="Nombre Completo ">
+            <input type="email " class="form-control " id="floatingInput " placeholder="Nombre Completo " required="true" [(ngModel)]="nombre">
         </div>
 
 
@@ -43,29 +43,29 @@
 
 
         <div class="input-group mb-3 ">
-            <input type="text " class="form-control " placeholder="Estado " aria-label="Estado ">
-            <input type="text " class="form-control " placeholder="Ciudad " aria-label="Ciudad ">
-            <input type="text " class="form-control " placeholder="Telefono " aria-label="Telefono ">
+            <input type="text " class="form-control " placeholder="Estado " aria-label="Estado " [(ngModel)]="estado">
+            <input type="text " class="form-control " placeholder="Ciudad " aria-label="Ciudad " [(ngModel)]="ciudad">
+            <input type="text " class="form-control " placeholder="Telefono " aria-label="Telefono " [(ngModel)]="telefono">
 
         </div>
         <label for="basic-url " class="form-label ">Contraseña</label>
 
 
         <div class="input-group mb-3 ">
-            <input type="password " class="form-control " placeholder="Ingresa tu contraseña " aria-label="Ingresa tu contraseña ">
-            <input type="password " class="form-control " placeholder="Confirma tu contraseña " aria-label="Confirma tu contraseña ">
+            <input type="password" class="form-control " placeholder="Ingresa tu contraseña " aria-label="Ingresa tu contraseña " [(ngModel)]="password">
+            <input type="password" class="form-control " placeholder="Confirma tu contraseña " aria-label="Confirma tu contraseña " [(ngModel)]="confirmacion">
 
         </div>
 
 
 
         <div style="margin-top: 20px; ">
-            <re-captcha (resolved)="resolved($event) " [siteKey]="sitekey "></re-captcha>
+            <re-captcha (resolved)="resolved($event) " [siteKey]="sitekey " style="float: left; "></re-captcha>
 
         </div>
 
 
-        <button type="submit " class="btn btn-primary " style="float: right; ">ENVIAR</button>
+        <button type="submit " class="btn btn-primary " style="float: right; margin-top: 35px;" (click)="validacionCuenta()">ENVIAR</button>
 
     </div>
 
